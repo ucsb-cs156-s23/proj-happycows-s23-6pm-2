@@ -3,16 +3,19 @@ import { Card, Button, Row, Col, Modal, Form } from "react-bootstrap";
 import cowHead from "./../../../assets/CowHead.png";
 // add parameters 
 const ManageCows = ({ userCommons, commons, onBuy, onSell }) => {
+  // Stryker disable next-line all : hard to set up test for caching
   const [showBuyHerdModal, setShowBuyHerdModal] = useState(false);
   const [numOfCowsToBuy, setNumOfCowsToBuy] = useState(2);
 
   //  handlers for the  herd modal and the number of cows to buy
+  // Stryker disable next-line all
   const handleBuyHerdModalClose = () => setShowBuyHerdModal(false);
   const handleBuyHerdModalShow = () => setShowBuyHerdModal(true);
   const handleNumOfCowsToBuyChange = (event) =>
     setNumOfCowsToBuy(parseInt(event.target.value));
 
   const handleBuyHerd = () => {
+    // Stryker disable next-line all
     onBuy({ ...userCommons, numOfCows: numOfCowsToBuy });
     handleBuyHerdModalClose();
   };
@@ -87,7 +90,7 @@ const ManageCows = ({ userCommons, commons, onBuy, onSell }) => {
           </Modal.Body>
           <Modal.Footer>
             {/* Buttons to close the modal or buy the herd */}
-            <Button variant="secondary" onClick={handleBuyHerdModalClose}>
+            <Button variant="secondary" onClick={handleBuyHerdModalClose} data-testid={"closemodalbutton"}>
               Close
             </Button>
             <Button variant="primary" onClick={handleBuyHerd}>

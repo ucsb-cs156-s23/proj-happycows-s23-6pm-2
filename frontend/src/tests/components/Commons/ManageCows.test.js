@@ -48,7 +48,31 @@ describe("ManageCows tests", () => {
       
         fireEvent.click(buyModalButton);
         await waitFor(() => expect(mockBuy).toHaveBeenCalled());
+        await waitFor(() => expect(screen.queryByTestId("buyHerdForm")).toBeNull());
+
       });
       
 
+      test("test closemodal",async () => {
+        const mockBuy = jest.fn();
+      
+        render(
+          <ManageCows userCommons={userCommonsFixtures.oneUserCommons[0]} onBuy={mockBuy} />
+        );
+        await waitFor(() =>  expect(screen.queryByText("How many cows do you want to buy?")).not.toBeInTheDocument());
+
+        const buyHerdButton = screen.getByTestId("buy-herd-button");
+      
+        fireEvent.click(buyHerdButton);
+        await waitFor(() => expect(screen.getByText("How many cows do you want to buy?")).toBeInTheDocument());
+      
+        const handleBuyHerdModalClose = screen.getByTestId("closemodalbutton");
+      
+        fireEvent.click(handleBuyHerdModalClose);
+      
+        await waitFor(() =>  expect(screen.queryByText("How many cows do you want to buy?")).not.toBeInTheDocument());
+        await waitFor(() => expect(screen.queryByTestId("buyHerdForm")).toBeNull());
+
+      });
+      
 });
