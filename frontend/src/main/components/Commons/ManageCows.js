@@ -5,17 +5,9 @@ import cowHead from "./../../../assets/CowHead.png";
 const ManageCows = ({ userCommons, commons, onBuy, onSell }) => {
   const [showBuyHerdModal, setShowBuyHerdModal] = useState(false);
   const [numOfCowsToBuy, setNumOfCowsToBuy] = useState(2);
-
   const handleBuyHerdModalClose = () => setShowBuyHerdModal(false);
-  const handleBuyHerdModalShow = () => {
-    setShowBuyHerdModal(true);
-  };
-
-  const handleNumOfCowsToBuyChange = (event) => {
-    const numCows = parseInt(event.target.value);
-    setNumOfCowsToBuy(numCows);
-  };
-
+  const handleBuyHerdModalShow = () => setShowBuyHerdModal(true);
+  const handleNumOfCowsToBuyChange = (event) => setNumOfCowsToBuy(parseInt(event.target.value));
   const handleBuyHerd = () => {
     //Stryker disable-next-line all
     onBuy({ ...userCommons, numOfCows: numOfCowsToBuy });
