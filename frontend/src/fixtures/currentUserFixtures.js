@@ -11,7 +11,15 @@ const apiCurrentUserFixtures = {
             "emailVerified": true,
             "locale": "en",
             "hostedDomain": "ucsb.edu",
-            "admin": true
+            "admin": true,
+            "commons": [
+                {
+                    "id": 1,
+                    "name": "MyCommon",
+                    "cowPrice": 2,
+                    "milkPrice": 3,
+                }
+            ]
         },
         "roles": [
             {
@@ -59,7 +67,15 @@ const apiCurrentUserFixtures = {
             "emailVerified": true,
             "locale": "en",
             "hostedDomain": null,
-            "admin": false
+            "admin": false,
+            "commons": [
+                {
+                    "id": 1,
+                    "name": "MyCommon",
+                    "cowPrice": 2,
+                    "milkPrice": 3,
+                }
+            ]
         },
         "roles": [
             {
@@ -87,7 +103,7 @@ const apiCurrentUserFixtures = {
         ]
 
     },
-    missingRolesToTestErrorHandling:  {
+    missingRolesToTestErrorHandling: {
         "user": {
             "id": 2,
             "email": "pconrad.cis@gmail.com",

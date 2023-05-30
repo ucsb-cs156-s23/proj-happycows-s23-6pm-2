@@ -5,14 +5,14 @@ import axios from "axios";
 import AxiosMockAdapter from "axios-mock-adapter";
 
 import ProfilePage from "main/pages/ProfilePage";
-import { apiCurrentUserFixtures }  from "fixtures/currentUserFixtures";
+import { apiCurrentUserFixtures } from "fixtures/currentUserFixtures";
 import { systemInfoFixtures } from "fixtures/systemInfoFixtures";
 
 describe("ProfilePage tests", () => {
     const queryClient = new QueryClient();
     const axiosMock = new AxiosMockAdapter(axios);
 
-    beforeEach(()=>{
+    beforeEach(() => {
         axiosMock.reset();
         axiosMock.resetHistory();
         axiosMock.onGet("/api/systemInfo").reply(200, systemInfoFixtures.showingNeither);
@@ -30,6 +30,7 @@ describe("ProfilePage tests", () => {
 
         expect(await screen.findByText("Phillip Conrad")).toBeInTheDocument();
         expect(screen.getByText("pconrad.cis@gmail.com")).toBeInTheDocument();
+        expect(screen.getByText("MyCommon")).toBeInTheDocument();
     });
 
     test("renders correctly for admin user from UCSB", async () => {
@@ -48,5 +49,6 @@ describe("ProfilePage tests", () => {
         expect(screen.getByTestId("role-badge-user")).toBeInTheDocument();
         expect(screen.getByTestId("role-badge-member")).toBeInTheDocument();
         expect(screen.getByTestId("role-badge-admin")).toBeInTheDocument();
+        expect(screen.getByText("MyCommon")).toBeInTheDocument();
     });
 });
