@@ -28,4 +28,27 @@ describe("ManageCows tests", () => {
         
     });
 
+    test("buying a herd of cows", async () => {
+        const mockBuy = jest.fn();
+      
+        render(
+          <ManageCows userCommons={userCommonsFixtures.oneUserCommons[0]} onBuy={mockBuy} />
+        );
+      
+        const buyHerdButton = screen.getByTestId("buy-herd-button");
+      
+        fireEvent.click(buyHerdButton);
+        await waitFor(() => expect(screen.getByText("How many cows do you want to buy?")).toBeInTheDocument());
+      
+        const numOfCowsInput = screen.getByTestId("buyHerdForm");
+        fireEvent.change(numOfCowsInput, { target: { value: '5' } });
+        expect(numOfCowsInput.value).toBe('5'); 
+      
+        const buyModalButton = screen.getByText("Buy");
+      
+        fireEvent.click(buyModalButton);
+        await waitFor(() => expect(mockBuy).toHaveBeenCalled());
+      });
+      
+
 });
