@@ -38,7 +38,7 @@ describe("ManageCows tests", () => {
         const buyHerdButton = screen.getByTestId("buy-herd-button");
       
         fireEvent.click(buyHerdButton);
-        await waitFor(() => expect(screen.getByText("How many cows do you want to buy?")).toBeInTheDocument());
+        await screen.findByText("How many cows do you want to buy?");
       
         const numOfCowsInput = screen.getByTestId("buyHerdForm");
         fireEvent.change(numOfCowsInput, { target: { value: '5' } });
@@ -53,7 +53,7 @@ describe("ManageCows tests", () => {
       });
       
 
-      test("test closemodal",async () => {
+      test("closemodal test",async () => {
         const mockBuy = jest.fn();
       
         render(
@@ -64,7 +64,7 @@ describe("ManageCows tests", () => {
         const buyHerdButton = screen.getByTestId("buy-herd-button");
       
         fireEvent.click(buyHerdButton);
-        await waitFor(() => expect(screen.getByText("How many cows do you want to buy?")).toBeInTheDocument());
+        await screen.findByText("How many cows do you want to buy?");
       
         const handleBuyHerdModalClose = screen.getByTestId("closemodalbutton");
       
