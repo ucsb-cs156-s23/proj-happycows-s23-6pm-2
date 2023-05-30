@@ -30,27 +30,37 @@ describe("ManageCows tests", () => {
 
     test("buying a herd of cows", async () => {
         const mockBuy = jest.fn();
-      
+        
+        const userCommons = userCommonsFixtures.oneUserCommons[0];
+        const commons = { cowPrice: 30 }; 
+        
         render(
-          <ManageCows userCommons={userCommonsFixtures.oneUserCommons[0]} onBuy={mockBuy} />
+          <ManageCows
+            userCommons={userCommons}
+            commons={commons}
+            onBuy={mockBuy}
+          />
         );
       
         const buyHerdButton = screen.getByTestId("buy-herd-button");
-      
+        
         fireEvent.click(buyHerdButton);
         await screen.findByText("How many cows do you want to buy?");
-      
+        const cowPriceElements = screen.getByText('Cost: $60');
+        expect(cowPriceElements).toBeInTheDocument();
         const numOfCowsInput = screen.getByTestId("buyHerdForm");
         fireEvent.change(numOfCowsInput, { target: { value: '5' } });
         expect(numOfCowsInput.value).toBe('5'); 
-      
+        const cowPriceElements2 = screen.getByText('Cost: $150');
+        expect(cowPriceElements2).toBeInTheDocument();
         const buyModalButton = screen.getByText("Buy");
-      
+        
         fireEvent.click(buyModalButton);
+      
         await waitFor(() => expect(mockBuy).toHaveBeenCalled());
         await waitFor(() => expect(screen.queryByTestId("buyHerdForm")).toBeNull());
-
       });
+      
       
 
       test("closemodal test",async () => {
