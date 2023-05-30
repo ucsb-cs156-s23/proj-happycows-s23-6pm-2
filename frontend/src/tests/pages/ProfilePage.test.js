@@ -31,6 +31,8 @@ describe("ProfilePage tests", () => {
         expect(await screen.findByText("Phillip Conrad")).toBeInTheDocument();
         expect(screen.getByText("pconrad.cis@gmail.com")).toBeInTheDocument();
         expect(screen.getByText("MyCommon")).toBeInTheDocument();
+        expect(screen.getByText("Cow price: 2")).toBeInTheDocument();
+        expect(screen.getByText("Milk price: 3")).toBeInTheDocument();
     });
 
     test("renders correctly for admin user from UCSB", async () => {
@@ -50,5 +52,7 @@ describe("ProfilePage tests", () => {
         expect(screen.getByTestId("role-badge-member")).toBeInTheDocument();
         expect(screen.getByTestId("role-badge-admin")).toBeInTheDocument();
         expect(screen.getByText("MyCommon")).toBeInTheDocument();
+        expect(screen.getByText("Cow price: 2")).toBeInTheDocument();
+        expect(screen.getByText("Milk price: 3")).toBeInTheDocument();
     });
 });
