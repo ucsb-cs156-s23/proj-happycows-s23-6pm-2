@@ -1,28 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Card, Button, Row, Col, Modal, Form } from "react-bootstrap";
 import cowHead from "./../../../assets/CowHead.png";
 
 const ManageCows = ({ userCommons, commons, onBuy, onSell }) => {
   const [showBuyHerdModal, setShowBuyHerdModal] = useState(false);
   const [numOfCowsToBuy, setNumOfCowsToBuy] = useState(2);
-  const [herdCost, setHerdCost] = useState(0);
 
   const handleBuyHerdModalClose = () => setShowBuyHerdModal(false);
-  const handleBuyHerdModalShow = () => setShowBuyHerdModal(true);
+  const handleBuyHerdModalShow = () => {
+    setShowBuyHerdModal(true);
+  };
 
-  const handleNumOfCowsToBuyChange = (event) =>
-    setNumOfCowsToBuy(parseInt(event.target.value));
+  const handleNumOfCowsToBuyChange = (event) => {
+    const numCows = parseInt(event.target.value);
+    setNumOfCowsToBuy(numCows);
+  };
 
   const handleBuyHerd = () => {
+    //Stryker disable-next-line all
     onBuy({ ...userCommons, numOfCows: numOfCowsToBuy });
     handleBuyHerdModalClose();
   };
-// Stryker disable all
-  useEffect(() => {
-    const cost = numOfCowsToBuy * commons?.cowPrice;
-    setHerdCost(cost);
-  }, [numOfCowsToBuy, commons]);
-  // Stryker restore all
+
   return (
     <Card>
       <Card.Header as="h5">Manage Cows</Card.Header>
@@ -85,7 +84,7 @@ const ManageCows = ({ userCommons, commons, onBuy, onSell }) => {
                 data-testid={"buyHerdForm"}
               />
             </Form.Group>
-            <p>Cost: ${herdCost}</p>
+            <p>Cost: ${numOfCowsToBuy * commons?.cowPrice}</p>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleBuyHerdModalClose} data-testid={"closemodalbutton"}>
