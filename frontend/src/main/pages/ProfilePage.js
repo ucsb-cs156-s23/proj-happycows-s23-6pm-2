@@ -37,15 +37,17 @@ const ProfilePage = () => {
             </Row>
             <Row className="align-items-center profile-header mb-5 text-center text-md-left">
                 {commons && commons.map((common) => (
-                    <Card key={common.id} style={{
-                        // Stryker disable all - no need to test CSS
-                        width: '18rem',
-                        margin: '0.3rem',
-                        backgroundColor: 'white',
-                        borderRadius: '0.5em',
-                        boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.2)',
-                        // Stryker restore all
-                    }}>
+                    <Card key={common.id} style={
+                        // Stryker disable all : no need to unit test CSS
+                        {
+                            width: '18rem',
+                            margin: '0.3rem',
+                            backgroundColor: 'white',
+                            borderRadius: '0.5em',
+                            boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.2)',
+                        } 
+                        // Stryker enable all
+                    }>
                         <Card.Body>
                             <Card.Title>{common.name}</Card.Title>
                             <Card.Text>
