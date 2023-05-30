@@ -33,6 +33,9 @@ describe("ProfilePage tests", () => {
         expect(screen.getByText("MyCommon")).toBeInTheDocument();
         expect(screen.getByText("Cow price: 2")).toBeInTheDocument();
         expect(screen.getByText("Milk price: 3")).toBeInTheDocument();
+
+        const enterButton1 = screen.getByTestId("enter-common-1");
+        expect(enterButton1).toHaveAttribute('href', '/play/1')
     });
 
     test("renders correctly for admin user from UCSB", async () => {
@@ -54,5 +57,8 @@ describe("ProfilePage tests", () => {
         expect(screen.getByText("MyCommon")).toBeInTheDocument();
         expect(screen.getByText("Cow price: 2")).toBeInTheDocument();
         expect(screen.getByText("Milk price: 3")).toBeInTheDocument();
+
+        const enterButton1 = screen.getByTestId("enter-common-1");
+        expect(enterButton1).toHaveAttribute('href', '/play/1')
     });
 });

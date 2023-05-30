@@ -36,7 +36,7 @@ const ProfilePage = () => {
                 </Col>
             </Row>
             <Row className="align-items-center profile-header mb-5 text-center text-md-left">
-                {commons.map((common) => (
+                {commons && commons.map((common) => (
                     <Card key={common.id} style={{
                         // Stryker disable all - no need to test CSS
                         width: '18rem',
@@ -54,7 +54,7 @@ const ProfilePage = () => {
                             <Card.Text>
                                 Milk price: {common.milkPrice}
                             </Card.Text>
-                            <Link to={"/play/" + common.id} style={{
+                            <Link to={"/play/" + common.id} data-testid={"enter-common-" + common.id} style={{
                                 // Stryker disable next-line all : no need to unit test CSS
                                 textDecoration: 'none'
                             }}>
