@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-s23/proj-happycows-s23-6pm-2
 owner: ucsb-cs156-s23
 repo_name: proj-happycows-s23-6pm-2
-pull_requests: [{"author":{"id":"MDQ6VXNlcjUxMzkzMTI3","is_bot":false,"login":"chriscerie","name":"Chris Chang"},"headRefName":"commons-profile","number":9,"title":"Add commons to profile page","url":"https://github.com/ucsb-cs156-s23/proj-happycows-s23-6pm-2/pull/9"}]
+pull_requests: [{"author":{"id":"MDQ6VXNlcjM2NTczMjU5","is_bot":false,"login":"Jacob10383","name":"Jacob"},"headRefName":"JT-BuyHerd","number":13,"title":"Frontend Functionality of Buyherd","url":"https://github.com/ucsb-cs156-s23/proj-happycows-s23-6pm-2/pull/13"},{"author":{"id":"MDQ6VXNlcjUxMzkzMTI3","is_bot":false,"login":"chriscerie","name":"Chris Chang"},"headRefName":"commons-profile","number":9,"title":"Add commons to profile page","url":"https://github.com/ucsb-cs156-s23/proj-happycows-s23-6pm-2/pull/9"}]
