@@ -7,16 +7,22 @@ import AxiosMockAdapter from "axios-mock-adapter";
 import ProfilePage from "main/pages/ProfilePage";
 import { apiCurrentUserFixtures } from "fixtures/currentUserFixtures";
 import { systemInfoFixtures } from "fixtures/systemInfoFixtures";
+import userCommonsFixtures from "fixtures/userCommonsFixtures";
 
 describe("ProfilePage tests", () => {
     const queryClient = new QueryClient();
     const axiosMock = new AxiosMockAdapter(axios);
+    const oneUserCommons = userCommonsFixtures.oneUserCommons[0];
 
     beforeEach(() => {
         axiosMock.reset();
         axiosMock.resetHistory();
         axiosMock.onGet("/api/systemInfo").reply(200, systemInfoFixtures.showingNeither);
         axiosMock.onGet("/api/currentUser").reply(200, apiCurrentUserFixtures.userOnly);
+
+        axiosMock.onGet("/api/usercommons/forcurrentuser", {
+            params: { commonsId: oneUserCommons.id }
+        }).reply(200, oneUserCommons);
     });
 
     test("renders correctly for regular logged in user", async () => {
@@ -31,11 +37,7 @@ describe("ProfilePage tests", () => {
         expect(await screen.findByText("Phillip Conrad")).toBeInTheDocument();
         expect(screen.getByText("pconrad.cis@gmail.com")).toBeInTheDocument();
         expect(screen.getByText("MyCommon")).toBeInTheDocument();
-        expect(screen.getByText("Cow price: 2")).toBeInTheDocument();
-        expect(screen.getByText("Milk price: 3")).toBeInTheDocument();
-
-        const enterButton1 = screen.getByTestId("enter-common-1");
-        expect(enterButton1).toHaveAttribute('href', '/play/1')
+        expect(screen.getByTestId(`commons-card-box-${oneUserCommons.id}`)).toBeInTheDocument();
     });
 
     test("renders correctly for admin user from UCSB", async () => {
@@ -55,10 +57,6 @@ describe("ProfilePage tests", () => {
         expect(screen.getByTestId("role-badge-member")).toBeInTheDocument();
         expect(screen.getByTestId("role-badge-admin")).toBeInTheDocument();
         expect(screen.getByText("MyCommon")).toBeInTheDocument();
-        expect(screen.getByText("Cow price: 2")).toBeInTheDocument();
-        expect(screen.getByText("Milk price: 3")).toBeInTheDocument();
-
-        const enterButton1 = screen.getByTestId("enter-common-1");
-        expect(enterButton1).toHaveAttribute('href', '/play/1')
+        expect(screen.getByTestId(`commons-card-box-${oneUserCommons.id}`)).toBeInTheDocument();
     });
 });
