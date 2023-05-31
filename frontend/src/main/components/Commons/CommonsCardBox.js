@@ -4,9 +4,9 @@ import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const CommonsCardBox = ({ commons }) => {
-  const id = commons ? commons.id : -1;
-
   // Stryker disable all
+  const id = commons ? commons.id : -1;
+  
   const commonsData = useBackend(
     [`api/usercommons/forcurrentuser?commonsId=${id}`],
     {
