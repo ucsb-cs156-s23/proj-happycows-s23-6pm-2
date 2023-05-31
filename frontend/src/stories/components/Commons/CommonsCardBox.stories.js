@@ -4,7 +4,7 @@ import CommonsCardBox from "main/components/Commons/CommonsCardBox";
 import userCommonsFixtures from 'fixtures/userCommonsFixtures';
 
 export default {
-    title: 'pages/CommonsCardBox',
+    title: 'components/commons/CommonsCardBox',
     component: CommonsCardBox
 };
 
