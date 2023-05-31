@@ -13,5 +13,5 @@ const Template = (props) => <CommonsCardBox {...props} />;
 export const Default = Template.bind({});
 
 Default.args = {
-    commons: userCommonsFixtures.oneUserCommon[0].commons,
+    commons: userCommonsFixtures.oneUserCommons[0].commons,
 }
