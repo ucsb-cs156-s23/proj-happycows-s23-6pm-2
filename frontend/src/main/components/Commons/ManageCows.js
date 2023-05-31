@@ -10,7 +10,7 @@ const ManageCows = ({ userCommons, commons, onBuy, onSell }) => {
   const handleNumOfCowsToBuyChange = (event) => setNumOfCowsToBuy(parseInt(event.target.value));
   const handleBuyHerd = () => {
     //Stryker disable-next-line all
-    onBuy({ ...userCommons, numOfCows: numOfCowsToBuy });
+    onBuy({ ...userCommons, numOfCowsToBuy });
     handleBuyHerdModalClose();
   };
 
@@ -39,7 +39,8 @@ const ManageCows = ({ userCommons, commons, onBuy, onSell }) => {
             <Button
               variant="outline-danger"
               onClick={() => {
-                onBuy(userCommons);
+                //Stryker disable-next-line all
+                onBuy({ ...userCommons, numOfCowsToBuy:1 });
               }}
               data-testid={"buy-cow-button"}
             >
