@@ -45,4 +45,15 @@ describe("CommonsCardBox tests", () => {
         expect(enterButton1).toBeInTheDocument();
         expect(enterButton1).toHaveAttribute('href', '/play/1')
     });
+
+    test("renders nothing when given invalid commons", async () => {
+        const { container } = render(
+            <QueryClientProvider client={queryClient}>
+                <MemoryRouter>
+                    <CommonsCardBox />
+                </MemoryRouter>
+            </QueryClientProvider>
+        );
+        expect(container).toBeEmptyDOMElement();
+    });
 });
