@@ -17,7 +17,7 @@ Default.args = {
   userCommons: userCommonsFixtures.oneUserCommons[0],
 }
 
-export const decorators = [
+Default.decorators = [
   (Story) => (
     <div style={{ textAlign: 'center' }}>
       <Story />
