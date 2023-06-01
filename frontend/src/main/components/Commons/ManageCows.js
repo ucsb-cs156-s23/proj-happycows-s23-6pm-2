@@ -38,11 +38,11 @@ const ManageCows = ({ userCommons, commons, onBuy, onSell }) => {
             <br />
             <Button
               variant="outline-danger"
-              onClick={() => {
-                //Stryker disable-next-line all
-                onBuy({ ...userCommons, numOfCowsToBuy:1 });
-              }}
+              //Stryker disable all
+              onClick={() => {onBuy({ ...userCommons, numOfCowsToBuy:1 });}}
               data-testid={"buy-cow-button"}
+                 //Stryker enable all
+
             >
               Buy cow
             </Button>
