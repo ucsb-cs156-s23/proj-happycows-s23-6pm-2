@@ -65,8 +65,8 @@ describe("LeaderboardTable tests", () => {
 
     );
 
-    const expectedHeaders = ['(Admin) userCommons Id', 'Username', 'User Id', 'Total Wealth', 'Cows Owned', 'Cow Health'];
-    const expectedFields = ['id', 'userId', 'username', 'totalWealth','numOfCows', 'cowHealth'];
+    const expectedHeaders = ['(Admin) userCommons Id', 'Username', 'User Id', 'Total Wealth', 'Cows Owned', 'Cow Health', 'Total Cows Sold'];
+    const expectedFields = ['id', 'userId', 'username', 'totalWealth','numOfCows', 'cowHealth', 'numCowsSold'];
     const testId = "LeaderboardTable";
 
     expectedHeaders.forEach((headerText) => {
