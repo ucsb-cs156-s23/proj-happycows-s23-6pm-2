@@ -1,13 +1,13 @@
 import FarmStats from "main/components/Commons/FarmStats";
-import userCommonsFixtures from "fixtures/userCommonsFixtures"; 
+import userCommonsFixtures from "fixtures/userCommonsFixtures";
 
 export default {
-  title: 'components/commons/FarmStats',
+  title: "components/commons/FarmStats",
   component: FarmStats,
   argTypes: {
-    'userCommons.cowHealth': {
+    cowHealth: {
       control: {
-        type: 'range',
+        type: "range",
         min: 0,
         max: 100,
       },
@@ -15,7 +15,16 @@ export default {
   },
 };
 
-const Template = (props) => <FarmStats {...props} />;
+const Template = (args) => {
+  return (
+    <FarmStats
+      userCommons={{
+        ...args.userCommons,
+        cowHealth: args.cowHealth,
+      }}
+    />
+  );
+};
 
 export const Default = Template.bind({});
 
