@@ -27,7 +27,7 @@ export default function LeaderboardTable({ leaderboardUsers , currentUser }) {
         },
         {
             Header: 'Total Cows Bought',
-            accessor: 'cowsBought',
+            accessor: 'lifetimeNumCows',
         },
     ];
 

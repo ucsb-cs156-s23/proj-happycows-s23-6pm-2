@@ -8,7 +8,7 @@ const leaderboardFixtures = {
             "commonsId": 1,
             "totalWealth" : 1000,
             "numOfCows": 5,
-            "cowsBought": 5
+            "lifetimeNumCows": 5
         }
     ],
     threeUserCommonsLB:
@@ -20,7 +20,7 @@ const leaderboardFixtures = {
             "commonsId": 1,
             "totalWealth" : 1000,
             "numOfCows": 8,
-            "cowsBought": 12
+            "lifetimeNumCows": 12
         },
         {
             "id":2,
@@ -29,7 +29,7 @@ const leaderboardFixtures = {
             "commonsId": 1,
             "totalWealth" : 1000,
             "numOfCows": 5,
-            "cowsBought": 8
+            "lifetimeNumCows": 8
         },
         {
             "id":3,
@@ -38,7 +38,7 @@ const leaderboardFixtures = {
             "commonsId": 1,
             "totalWealth" : 100000,
             "numOfCows": 1000,
-            "cowsBought": 1500
+            "lifetimeNumCows": 1500
         }
     ],
     fiveUserCommonsLB: 
@@ -51,7 +51,7 @@ const leaderboardFixtures = {
             "totalWealth" : 1000,
             "cowHealth": 93.0,
             "numOfCows": 8,
-            "cowsBought": 12
+            "lifetimeNumCows": 12
         },
         {
             "id":2,
@@ -61,7 +61,7 @@ const leaderboardFixtures = {
             "totalWealth" : 1000,
             "cowHealth": 98.0,
             "numOfCows": 5,
-            "cowsBought": 5
+            "lifetimeNumCows": 5
         },
         {
             "id":3,
@@ -71,7 +71,7 @@ const leaderboardFixtures = {
             "totalWealth" : 100000,
             "cowHealth": 2.0,
             "numOfCows": 1000,
-            "cowsBought": 1500
+            "lifetimeNumCows": 1500
         },
         {
             "id":4,
@@ -81,7 +81,7 @@ const leaderboardFixtures = {
             "totalWealth" : 50,
             "cowHealth": 84.0,
             "numOfCows": 100,
-            "cowsBought": 100
+            "lifetimeNumCows": 100
         },
         {
             "id":5,
@@ -90,7 +90,7 @@ const leaderboardFixtures = {
             "commonsId": 1,
             "totalWealth" : 800,
             "numOfCows": 60,
-            "cowsBought": 60
+            "lifetimeNumCows": 60
         }
     ],
     tenUserCommonsLB: 
@@ -103,7 +103,7 @@ const leaderboardFixtures = {
             "totalWealth" : 1000,
             "cowHealth": 93.0,
             "numOfCows": 8,
-            "cowsBought": 12
+            "lifetimeNumCows": 12
         },
         {
             "id":2,
@@ -113,7 +113,7 @@ const leaderboardFixtures = {
             "totalWealth" : 1000,
             "cowHealth": 98.0,
             "numOfCows": 5,
-            "cowsBought": 8
+            "lifetimeNumCows": 8
         },
         {
             "id":3,
@@ -123,7 +123,7 @@ const leaderboardFixtures = {
             "totalWealth" : 100000,
             "cowHealth": 2.0,
             "numOfCows": 1000,
-            "cowsBought": 1500
+            "lifetimeNumCows": 1500
         },
         {
             "id":4,
@@ -133,7 +133,7 @@ const leaderboardFixtures = {
             "totalWealth" : 50,
             "cowHealth": 84.0,
             "numOfCows": 100,
-            "cowsBought": 100
+            "lifetimeNumCows": 100
         },
         {
             "id":5,
@@ -143,7 +143,7 @@ const leaderboardFixtures = {
             "totalWealth" : 800,
             "cowHealth": 72.0,
             "numOfCows": 60,
-            "cowsBought": 60
+            "lifetimeNumCows": 60
         },
         {
             "id":6,
@@ -153,7 +153,7 @@ const leaderboardFixtures = {
             "totalWealth" : 1000,
             "cowHealth": 93.0,
             "numOfCows": 8,
-            "cowsBought": 8
+            "lifetimeNumCows": 8
         },
         {
             "id":7,
@@ -163,7 +163,7 @@ const leaderboardFixtures = {
             "totalWealth" : 1000,
             "cowHealth": 98.0,
             "numOfCows": 5,
-            "cowsBought": 8
+            "lifetimeNumCows": 8
         },
         {
             "id":8,
@@ -173,7 +173,7 @@ const leaderboardFixtures = {
             "totalWealth" : 100000,
             "cowHealth": 2.0,
             "numOfCows": 1000,
-            "cowsBought": 1000
+            "lifetimeNumCows": 1000
         },
         {
             "id":9,
@@ -183,7 +183,7 @@ const leaderboardFixtures = {
             "totalWealth" : 50,
             "cowHealth": 84.0,
             "numOfCows": 100,
-            "cowsBought": 100
+            "lifetimeNumCows": 100
         },
         {
             "id":10,
@@ -192,7 +192,7 @@ const leaderboardFixtures = {
             "commonsId": 1,
             "totalWealth" : 800,
             "numOfCows": 60,
-            "cowsBought": 60
+            "lifetimeNumCows": 60
         }
     ]
 }

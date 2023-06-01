@@ -12,7 +12,7 @@ const ManageCows = ({userCommons,commons, onBuy, onSell}) =>  {
             {/* change $10 to info from fixture */}
             <Card.Title>Market Cow Price: ${commons?.cowPrice}</Card.Title>
             <Card.Title>Number of Cows: {userCommons.numOfCows}</Card.Title>
-            <Card.Title>Total Number of Cows Bought(Overall): {userCommons.cowsBought}</Card.Title>
+            <Card.Title>Total Number of Cows Bought(Overall): {userCommons.lifetimeNumCows}</Card.Title>
                 <Row>
                     <Col>
                         <Card.Text>
