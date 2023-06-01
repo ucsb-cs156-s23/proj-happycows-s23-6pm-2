@@ -24,10 +24,10 @@ export function CommonsCardBoxWithData({ commons, userCommons }) {
           // Stryker disable next-line all : no need to unit test CSS
           { margin: "0.2em" }
         }>
-          Total wealth: ${userCommons.data.totalWealth}
+          Total wealth: ${userCommons.totalWealth}
         </Card.Text>
         <Card.Text>
-          Owned cows: {userCommons.data.numOfCows}
+          Owned cows: {userCommons.numOfCows}
         </Card.Text>
         <Link to={"/play/" + commons.id} data-testid={"enter-common-" + commons.id} style={{
           // Stryker disable next-line all : no need to unit test CSS
@@ -45,8 +45,8 @@ export function CommonsCardBoxWithData({ commons, userCommons }) {
 const CommonsCardBox = ({ commons }) => {
   // Stryker disable all
   const id = commons ? commons.id : -1;
-  
-  const commonsData = useBackend(
+
+  const userCommons = useBackend(
     [`api/usercommons/forcurrentuser?commonsId=${id}`],
     {
       method: "GET",
@@ -58,12 +58,12 @@ const CommonsCardBox = ({ commons }) => {
   );
   // Stryker enable all
 
-  if (!commonsData || !commonsData.data || !commons) {
+  if (!userCommons || !userCommons.data || !commons) {
     return null
   }
 
   return (
-    <CommonsCardBoxWithData commons={commons} userCommons={commonsData} />
+    <CommonsCardBoxWithData commons={commons} userCommons={userCommons.data} />
   )
 };
 
