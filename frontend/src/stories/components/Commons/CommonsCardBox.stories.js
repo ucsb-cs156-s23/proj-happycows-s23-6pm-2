@@ -15,12 +15,4 @@ export const Default = Template.bind({});
 Default.args = {
   commons: userCommonsFixtures.oneUserCommons[0].commons,
   userCommons: userCommonsFixtures.oneUserCommons[0],
-}
-
-Default.decorators = [
-  (Story) => (
-    <div style={{ textAlign: 'center' }}>
-      <Story />
-    </div>
-  ),
-];
+};

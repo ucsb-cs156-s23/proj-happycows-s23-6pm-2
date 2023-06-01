@@ -15,6 +15,7 @@ export function CommonsCardBoxWithData({ commons, userCommons }) {
           backgroundColor: 'white',
           borderRadius: '0.5em',
           boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.2)',
+          textAlign: 'center',
         }
         // Stryker enable all
       }>
