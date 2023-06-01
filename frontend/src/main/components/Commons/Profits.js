@@ -5,7 +5,7 @@ import ProfitsTable from "main/components/Commons/ProfitsTable";
 import { timestampToDate } from "main/utils/dateUtils";
 
 
-const Profits = ({ profits }) => {
+const Profits = ({ profits,commons }) => {
     const profitsForTable =
         profits ?
         profits.map(profit => ({
@@ -24,6 +24,7 @@ const Profits = ({ profits }) => {
                 <Card.Title>
                     You will earn profits from milking your cows everyday at 4am.
                 </Card.Title>
+                <Card.Title>Market Milk Price: ${commons?.milkPrice} per healthy cow.</Card.Title>
                 <ProfitsTable profits={profitsForTable} />
             </Card.Body>
         </Card>

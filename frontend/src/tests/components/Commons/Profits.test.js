@@ -1,18 +1,26 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import Profits from "main/components/Commons/Profits"; 
 import userCommonsFixtures from "fixtures/userCommonsFixtures"; 
+import commonsFixtures from "fixtures/commonsFixtures";
 import profitsFixtures from "fixtures/profitsFixtures";
 
 describe("Profits tests", () => {
+    test("shows milk price", () => {
+        render(
+            <Profits userCommons={userCommonsFixtures.oneUserCommons[0]} commons={commonsFixtures.oneCommons[0]} profits={[]} />
+        );
+        expect(screen.getByText("Market Milk Price: $10 per healthy cow.")).toBeInTheDocument();
+    })
+
     test("renders properly for empty profits array", () => {
         render(
-            <Profits userCommons={userCommonsFixtures.oneUserCommons[0]} profits={[]} />
+            <Profits userCommons={userCommonsFixtures.oneUserCommons[0]} commons={commonsFixtures.oneCommons[0]} profits={[]} />
         );
     });
 
     test("renders properly when profits is not defined", async () => {
         render(
-            <Profits userCommons={userCommonsFixtures.oneUserCommons[0]}  />
+            <Profits userCommons={userCommonsFixtures.oneUserCommons[0]} commons={commonsFixtures.oneCommons[0]}  />
         );
         await waitFor(()=>{
             expect(screen.getByTestId("ProfitsTable-header-Amount") ).toBeInTheDocument();
@@ -21,7 +29,7 @@ describe("Profits tests", () => {
 
     test("renders properly when profits is non-empty", async () => {
         render(
-            <Profits userCommons={userCommonsFixtures.oneUserCommons[0]} profits={profitsFixtures.threeProfits} />
+            <Profits userCommons={userCommonsFixtures.oneUserCommons[0]} commons={commonsFixtures.oneCommons[0]} profits={profitsFixtures.threeProfits} />
         );
            
         expect(await screen.findByTestId("ProfitsTable-cell-row-0-col-Amount")).toBeInTheDocument();
