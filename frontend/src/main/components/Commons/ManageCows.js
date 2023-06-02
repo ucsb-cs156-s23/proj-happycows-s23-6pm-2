@@ -7,7 +7,12 @@ const ManageCows = ({ userCommons, commons, onBuy, onSell }) => {
   const [numOfCowsToBuy, setNumOfCowsToBuy] = useState(2);
   const handleBuyHerdModalClose = () => setShowBuyHerdModal(false);
   const handleBuyHerdModalShow = () => setShowBuyHerdModal(true);
-  const handleNumOfCowsToBuyChange = (event) => setNumOfCowsToBuy(parseInt(event.target.value));
+  const handleNumOfCowsToBuyChange = (event) => {
+    const value = parseInt(event.target.value);
+    if (value >= 2 && !isNaN(value)) {
+      setNumOfCowsToBuy(value);
+    }
+  };
   const handleBuyHerd = () => {
     //Stryker disable-next-line all
     onBuy( numOfCowsToBuy );
