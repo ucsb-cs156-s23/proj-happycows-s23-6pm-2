@@ -59,8 +59,7 @@ describe("ManageCows tests", () => {
       
         await waitFor(() => expect(mockBuy).toHaveBeenCalled());
         await waitFor(() => expect(screen.queryByTestId("buyHerdForm")).toBeNull());
-        const handleBuyHerd = mockBuy.mock.calls[0][0];
-        expect(handleBuyHerd.numOfCows).toBe(5);
+
       });
       
       

@@ -72,15 +72,12 @@ export default function PlayPage() {
     } 
   }
   
-
-  
-  const objectToAxiosParamsBuy = (newUserCommons) => ({
+  const objectToAxiosParamsBuy = (numOfCowsToBuy) => ({
     url: "/api/usercommons/buy",
     method: "PUT",
-    data: newUserCommons,
     params: {
       commonsId: commonsId,
-      numOfCowsToBuy: newUserCommons.numOfCowsToBuy
+      numOfCowsToBuy: numOfCowsToBuy
     }
   });
   
@@ -93,10 +90,10 @@ export default function PlayPage() {
   );
   // Stryker enable all 
   
-  const onBuy = (userCommons) => {
-    mutationbuy.mutate(userCommons, {
+  const onBuy = (numOfCowsToBuy) => {
+    mutationbuy.mutate(numOfCowsToBuy, {
       onSuccess: () => {
-        onSuccessBuy(userCommons.numOfCowsToBuy);
+        onSuccessBuy(numOfCowsToBuy);
       }
     });
   };
