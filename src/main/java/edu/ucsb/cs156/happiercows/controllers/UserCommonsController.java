@@ -72,28 +72,30 @@ public class UserCommonsController extends ApiController {
     return userCommons;
   }
 
-  @ApiOperation(value = "Buy a cow, totalWealth updated")
+  @ApiOperation(value = "Buy cow(s), totalWealth updated")
   @PreAuthorize("hasRole('ROLE_USER')")
   @PutMapping("/buy")
   public ResponseEntity<String> putUserCommonsByIdBuy(
-          @ApiParam("commonsId") @RequestParam Long commonsId) throws NotEnoughMoneyException, JsonProcessingException{
-
+          @ApiParam("commonsId") @RequestParam Long commonsId, 
+          @ApiParam("numOfCowsToBuy") @RequestParam int numOfCowsToBuy)
+           throws NotEnoughMoneyException, JsonProcessingException{
         User u = getCurrentUser().getUser();
         Long userId = u.getId();
-
+          if (numOfCowsToBuy < 1) {
+          throw new IllegalArgumentException("Number of cows to buy should be greater than or equal to 1");
+}
         Commons commons = commonsRepository.findById(commonsId).orElseThrow( 
           ()->new EntityNotFoundException(Commons.class, commonsId));
         UserCommons userCommons = userCommonsRepository.findByCommonsIdAndUserId(commonsId, userId)
         .orElseThrow(
             () -> new EntityNotFoundException(UserCommons.class, "commonsId", commonsId, "userId", userId));
-
-        if(userCommons.getTotalWealth() >= commons.getCowPrice() ){
-          userCommons.setTotalWealth(userCommons.getTotalWealth() - commons.getCowPrice());
-          userCommons.setNumOfCows(userCommons.getNumOfCows() + 1);
+          
+        if(userCommons.getTotalWealth() >= commons.getCowPrice()*numOfCowsToBuy ){
+          userCommons.setTotalWealth(userCommons.getTotalWealth() - commons.getCowPrice()*numOfCowsToBuy);
+          userCommons.setNumOfCows(userCommons.getNumOfCows() +(numOfCowsToBuy));
         }
         else{
-          throw new NotEnoughMoneyException("You need more money!");
-        }
+        throw new NotEnoughMoneyException("You need more money!");        }
         userCommonsRepository.save(userCommons);
 
         String body = mapper.writeValueAsString(userCommons);
