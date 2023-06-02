@@ -81,7 +81,9 @@ public class UserCommonsController extends ApiController {
            throws NotEnoughMoneyException, JsonProcessingException{
         User u = getCurrentUser().getUser();
         Long userId = u.getId();
-
+          if (numOfCowsToBuy < 1) {
+          throw new IllegalArgumentException("Number of cows to buy should be greater than or equal to 1");
+}
         Commons commons = commonsRepository.findById(commonsId).orElseThrow( 
           ()->new EntityNotFoundException(Commons.class, commonsId));
         UserCommons userCommons = userCommonsRepository.findByCommonsIdAndUserId(commonsId, userId)
