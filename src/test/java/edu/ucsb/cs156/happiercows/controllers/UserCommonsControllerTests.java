@@ -58,7 +58,15 @@ public class UserCommonsControllerTests extends ControllerTestCase {
   private ObjectMapper objectMapper;
 
   public static UserCommons dummyUserCommons(long id) {
-    UserCommons userCommons = new UserCommons(id,1,1,"test",1,1, 100);
+    UserCommons userCommons = UserCommons.builder()
+        .id(id)
+        .commonsId(1)
+        .userId(1)
+        .username("test")
+        .totalWealth(1)
+        .numOfCows(1)
+        .cowHealth(100)
+        .build();
     return userCommons;
   }
   @WithMockUser(roles = { "ADMIN" })
