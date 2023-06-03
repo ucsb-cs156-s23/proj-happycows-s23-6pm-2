@@ -75,6 +75,17 @@ describe("PlayPage tests", () => {
         fireEvent.click(sellCowButton);
 
         await waitFor(() => expect(axiosMock.history.put.length).toBe(2));
+
+        expect(await screen.findByTestId("buy-herd-button")).toBeInTheDocument();
+        const buyHerdButton = screen.getByTestId("buy-herd-button");
+        fireEvent.click(buyHerdButton);
+        const buyModalButton = screen.getByText("Buy");
+        fireEvent.click(buyModalButton);
+        await waitFor(() => expect(axiosMock.history.put.length).toBe(3));
+
+
+
+
     });
 
     test("Make sure that both the Announcements and Welcome Farmer components show up", async () => {

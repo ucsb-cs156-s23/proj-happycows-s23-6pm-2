@@ -62,20 +62,25 @@ export default function PlayPage() {
   // Stryker enable all 
 
 
-  const onSuccessBuy = () => {
-    toast(`Cow bought!`);
+  const onSuccessBuy = (numOfCows) => {
+    if (typeof numOfCows === 'number' && !isNaN(numOfCows)) {
+      if (numOfCows === 1) {
+        toast('1 Cow bought!');
+      } else {
+        toast(`${numOfCows} Cows bought!`);
+      }
+    } 
   }
-
-  const objectToAxiosParamsBuy = (newUserCommons) => ({
+  
+  const objectToAxiosParamsBuy = (numOfCowsToBuy) => ({
     url: "/api/usercommons/buy",
     method: "PUT",
-    data: newUserCommons,
     params: {
-      commonsId: commonsId
+      commonsId: commonsId,
+      numOfCowsToBuy: numOfCowsToBuy
     }
   });
-
-
+  
   // Stryker disable all 
   const mutationbuy = useBackendMutation(
     objectToAxiosParamsBuy,
@@ -84,11 +89,15 @@ export default function PlayPage() {
     [`/api/usercommons/forcurrentuser?commonsId=${commonsId}`]
   );
   // Stryker enable all 
-
-
-  const onBuy = (userCommons) => {
-    mutationbuy.mutate(userCommons)
+  
+  const onBuy = (numOfCowsToBuy) => {
+    mutationbuy.mutate(numOfCowsToBuy, {
+      onSuccess: () => {
+        onSuccessBuy(numOfCowsToBuy);
+      }
+    });
   };
+  
 
 
   const onSuccessSell = () => {
