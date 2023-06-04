@@ -49,11 +49,12 @@ public class UpdateCowHealthJob implements JobContextConsumer {
                 double newCowHealth = calculateNewCowHealth(userCommons.getCowHealth(), userCommons.getNumOfCows(), totalCows, carryingCapacity, degradationRate);
                 ctx.log(" old cow health: " + userCommons.getCowHealth() + ", new cow health: " + newCowHealth);
 
-                //Kills all cows when health = 0
-                if(newCowHealth <= 0){
+                //Kills all cows when health drops to 0
+                if(newCowHealth == 0 && userCommons.getCowHealth() != 0){
                     ctx.log("Cow health hit 0, and " + userCommons.getNumOfCows() + " cows died");
-                    userCommons.setCowDeaths(userCommons.getNumOfCows());
+                    userCommons.setCowDeaths(userCommons.getCowDeaths()+userCommons.getNumOfCows());
                     userCommons.setNumOfCows(0);
+                    //TODO currently resets cow health to 100 when cows die
                     userCommons.setCowHealth(100);
                 }
                 else{
