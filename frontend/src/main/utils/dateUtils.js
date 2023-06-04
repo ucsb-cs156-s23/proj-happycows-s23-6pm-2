@@ -6,7 +6,8 @@ const timestampToDate = (timestamp) => {
     return (date.getFullYear() + "-" + (padWithZero(date.getMonth()+1)) + "-" + padWithZero(date.getDate()));
 }
 
-const hourInSeconds = 60 * 60;
+const minutesInSeconds = 60;
+const hourInSeconds = 60 * minutesInSeconds;
 const dayInSeconds = 24 * hourInSeconds;
 const weekInSeconds = 7 * dayInSeconds;
 
@@ -19,9 +20,13 @@ export function formatTime(timeString) {
     const dateFromEpoch = new Date(timeString);
     const secondsPast = Math.floor((now - dateFromEpoch) / 1000);
 
+    if (secondsPast < minutesInSeconds * 2) {
+        return 'Online now';
+    }
+
     if (secondsPast < hourInSeconds) {
         const minutes = Math.floor(secondsPast / 60);
-        return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+        return `${minutes} minutes ago`;
     }
 
     if (secondsPast < dayInSeconds) {
