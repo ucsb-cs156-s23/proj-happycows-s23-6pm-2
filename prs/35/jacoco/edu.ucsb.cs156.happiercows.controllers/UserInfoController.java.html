@@ -33,11 +33,12 @@ import org.springframework.web.bind.annotation.RestController;
   @ApiOperation(value = &quot;Update user's last online time&quot;)
   @PreAuthorize(&quot;hasRole('ROLE_USER')&quot;)
   @PostMapping(&quot;/last-online&quot;)
-  public ResponseEntity&lt;?&gt; updateLastOnline() {
+  public ResponseEntity&lt;Instant&gt; updateLastOnline() {
 <span class="fc" id="L37">    User user = super.getCurrentUser().getUser();</span>
-<span class="fc" id="L38">    user.setLastOnline(Instant.now());</span>
-<span class="fc" id="L39">    userRepository.save(user);</span>
-<span class="fc" id="L40">    return ResponseEntity.ok().build();</span>
+<span class="fc" id="L38">    Instant timeNow = Instant.now();</span>
+<span class="fc" id="L39">    user.setLastOnline(timeNow);</span>
+<span class="fc" id="L40">    userRepository.save(user);</span>
+<span class="fc" id="L41">    return ResponseEntity.ok().body(timeNow);</span>
   }
 }
 
