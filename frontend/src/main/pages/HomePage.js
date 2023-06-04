@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react"
 import { Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
@@ -10,7 +9,6 @@ import Background from './../../assets/HomePageBackground.jpg';
 
 export default function HomePage() {
   // Stryker disable next-line all
-  const [commonsJoined, setCommonsJoined] = useState([]);
   const { data: currentUser } = useCurrentUser();
   // Stryker disable all 
 
@@ -37,21 +35,15 @@ export default function HomePage() {
     ["/api/currentUser"]
   );
 
-  useEffect(
-    () => {
-      if (currentUser?.root?.user?.commons) {
-        setCommonsJoined(currentUser.root.user.commons);
-      }
-    }, [currentUser]
-  );
-
   let navigate = useNavigate();
   const visitButtonClick = (id) => { navigate("/play/" + id) };
+
+  const commonsJoined = currentUser?.root?.user?.commons || [];
 
   //create a list of commons that the user hasn't joined for use in the "Join a New Commons" list.
   let joinedIdList = [];
   for (let commonJoined of commonsJoined) {
-	joinedIdList.push(commonJoined.id)
+    joinedIdList.push(commonJoined.id)
   }
   let commonsNotJoined = commons.filter(f => !joinedIdList.includes(f.id));
 
