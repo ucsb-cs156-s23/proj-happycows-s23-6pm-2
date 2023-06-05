@@ -24,7 +24,9 @@ const Profits = ({ profits }) => {
                 <Card.Title>
                     You will earn profits from milking your cows everyday at 4am.
                 </Card.Title>
-                <ProfitsTable profits={profitsForTable} />
+                <div style={{ overflowX: "auto" }} data-testid="profits">
+                    <ProfitsTable profits={profitsForTable} />
+                </div>
             </Card.Body>
         </Card>
     );

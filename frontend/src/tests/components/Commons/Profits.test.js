@@ -17,6 +17,10 @@ describe("Profits tests", () => {
         await waitFor(()=>{
             expect(screen.getByTestId("ProfitsTable-header-Amount") ).toBeInTheDocument();
         });
+
+        const divElement = screen.getByTestId("profits");
+        expect(divElement).toBeInTheDocument();
+        expect(divElement).toHaveStyle({ overflowX: "auto" });
     });
 
     test("renders properly when profits is non-empty", async () => {

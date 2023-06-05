@@ -25,11 +25,11 @@ export default function ProfitsTable({ profits }) {
         ], 
     []);
     const memoizedDates = React.useMemo(() => profits, [profits]);
-    // Stryker enable ArrayDeclaration
+    // Stryker restore ArrayDeclaration
 
-    return <OurTable
-        data={memoizedDates}
-        columns={memoizedColumns}
-        testid={"ProfitsTable"}
-    />;
+    return (
+        <div style={{ overflowX: "auto" }}  data-testid="profits-table">
+          <OurTable data={memoizedDates} columns={memoizedColumns} testid={"ProfitsTable"} />
+        </div>
+      );
 };

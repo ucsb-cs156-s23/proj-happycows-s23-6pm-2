@@ -23,6 +23,9 @@ describe("ProfitsTable tests", () => {
           const header = screen.getByText(headerText);
           expect(header).toBeInTheDocument();
         });
-
+        
+        const divElement = screen.getByTestId("profits-table");
+        expect(divElement).toBeInTheDocument();
+        expect(divElement).toHaveStyle({ overflowX: "auto" });
     });
 });
