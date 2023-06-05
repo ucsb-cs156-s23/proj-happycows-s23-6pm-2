@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import OurTable from "main/components/OurTable"
 import { formatTime } from "main/utils/dateUtils";
 
@@ -31,13 +31,18 @@ const columns = [
 ];
 
 export default function UsersTable({ users }) {
-    return <OurTable
-        data={users && users.map(user => {
-            return {
-                ...user, 
+    const data = useMemo(
+        () =>
+            (users || []).map((user) => ({
+                ...user,
                 lastOnline: formatTime(user.lastOnline),
-            };
-        })}
+            })),
+        // Stryker disable next-line all
+        [users]
+    );
+
+    return <OurTable
+        data={data}
         columns={columns}
         testid={"UsersTable"} />;
 };
