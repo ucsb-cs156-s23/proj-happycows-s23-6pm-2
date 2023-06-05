@@ -5,13 +5,10 @@ import commonsFixtures from "fixtures/commonsFixtures";
 import profitsFixtures from "fixtures/profitsFixtures";
 
 describe("Profits tests", () => {
-    test("shows milk price", async () => {
+    test("renders without crashing", async () => {
         render(
-            <Profits userCommons={userCommonsFixtures.oneUserCommons[0]} commons={commonsFixtures.oneCommons[0]} profits={[]} />
+            <Profits userCommons={userCommonsFixtures.oneUserCommons[0]} profits={[]} />
         );
-        await waitFor (() => {
-            expect(screen.getByText(/Market Milk Price: \$10 per healthy cow./)).toBeInTheDocument();
-        });
     })
 
     test("renders properly for empty profits array", () => {

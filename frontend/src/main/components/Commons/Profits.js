@@ -24,7 +24,7 @@ const Profits = ({ profits,commons }) => {
                 <Card.Title>
                     You will earn profits from milking your cows everyday at 4am.
                 </Card.Title>
-                <Card.Title>Market Milk Price: ${commons.milkPrice} per healthy cow.</Card.Title>
+                <Card.Title>Market Milk Price: ${commons?.milkPrice} per healthy cow.</Card.Title>
                 <ProfitsTable profits={profitsForTable} />
             </Card.Body>
         </Card>
