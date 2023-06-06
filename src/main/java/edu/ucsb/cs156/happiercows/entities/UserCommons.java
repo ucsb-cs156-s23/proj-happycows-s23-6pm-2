@@ -34,6 +34,8 @@ public class UserCommons {
 
   private double cowHealth;
 
+  private int cowDeaths;
+  
   private int lifetimeCowsBought;
 
   private int lifetimeCowsSold;

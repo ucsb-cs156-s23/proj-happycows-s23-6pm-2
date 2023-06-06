@@ -385,6 +385,71 @@ public class UpdateCowHealthJobTests {
         }
 
         @Test
+        void test_cow_death_when_health_hits_zero() throws Exception {
+
+                // Arrange
+                Job jobStarted = Job.builder().build();
+                JobContext ctx = new JobContext(null, jobStarted);
+
+                UserCommons origUserCommons = UserCommons
+                                .builder()
+                                .id(1L)
+                                .userId(1L)
+                                .commonsId(1L)
+                                .totalWealth(300)
+                                .numOfCows(20)
+                                .cowHealth(100)
+                                .build();
+
+                Commons testCommons = Commons
+                                .builder()
+                                .name("test commons")
+                                .cowPrice(10)
+                                .milkPrice(2)
+                                .startingBalance(300)
+                                .startingDate(LocalDateTime.now())
+                                .carryingCapacity(10)
+                                .degradationRate(10)
+                                .build();
+
+                UserCommons newUserCommons = UserCommons
+                                .builder()
+                                .id(1L)
+                                .userId(1L)
+                                .commonsId(1L)
+                                .totalWealth(300 - testCommons.getCowPrice())
+                                .numOfCows(20)
+                                .cowHealth(100)
+                                .build();
+
+                Commons commonsTemp[] = { testCommons };
+                UserCommons userCommonsTemp[] = { origUserCommons };
+                when(commonsRepository.findAll()).thenReturn(Arrays.asList(commonsTemp));
+                when(userCommonsRepository.findByCommonsId(testCommons.getId()))
+                                .thenReturn(Arrays.asList(userCommonsTemp));
+                when(commonsRepository.getNumCows(testCommons.getId())).thenReturn(Optional.of(Integer.valueOf(20)));
+                when(userRepository.findById(1L)).thenReturn(Optional.of(user));
+
+                // Act
+                UpdateCowHealthJob updateCowHealthJob = new UpdateCowHealthJob(commonsRepository, userCommonsRepository,
+                                userRepository);
+                updateCowHealthJob.accept(ctx);
+
+                // Assert
+
+                String expected = """
+                                Updating cow health...
+                                Commons test commons, degradationRate: 10.0, carryingCapacity: 10
+                                User: Chris Gaucho, numCows: 20, cowHealth: 100.0
+                                 old cow health: 100.0, new cow health: 0.0
+                                Cow health hit 0, and 20 cows died
+                                Cow health has been updated!""";
+
+                assertEquals(expected, jobStarted.getLog());
+                assertEquals(origUserCommons.getCowHealth(), newUserCommons.getCowHealth());
+        }
+
+        @Test
         void test_updating_to_new_values_for_multiple() throws Exception {
 
                 // Arrange

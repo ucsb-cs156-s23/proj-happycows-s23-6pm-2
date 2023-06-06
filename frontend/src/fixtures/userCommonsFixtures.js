@@ -21,6 +21,7 @@ const userCommonsFixtures = {
             "totalWealth" : 1000,
             "cowHealth": 98.0,
             "numOfCows": 5,
+            "cowDeaths": 2,
             "lifetimeCowsBought": 5,
             "lifetimeCowsSold": 0
         }
@@ -47,6 +48,7 @@ const userCommonsFixtures = {
             "totalWealth" : 1000,
             "cowHealth": 93.0,
             "numOfCows": 8,
+            "cowDeaths": 2,
             "lifetimeCowsBought": 12,
             "lifetimeCowsSold": 4
         },
@@ -70,6 +72,7 @@ const userCommonsFixtures = {
             "totalWealth" : 1000,
             "cowHealth": 98.0,
             "numOfCows": 5,
+            "cowDeaths": 2,
             "lifetimeCowsBought": 5,
             "lifetimeCowsSold": 0
         },
@@ -93,6 +96,7 @@ const userCommonsFixtures = {
             "totalWealth" : 100000,
             "cowHealth": 2.0,
             "numOfCows": 1000,
+            "cowDeaths": 2,
             "lifetimeCowsBought": 1500,
             "lifetimeCowsSold": 500
         }
@@ -119,6 +123,7 @@ const userCommonsFixtures = {
             "totalWealth" : 1000,
             "cowHealth": 93.0,
             "numOfCows": 8,
+            "cowDeaths": 1,
             "lifetimeCowsBought": 12,
             "lifetimeCowsSold": 4
         },
@@ -142,6 +147,7 @@ const userCommonsFixtures = {
             "totalWealth" : 1000,
             "cowHealth": 98.0,
             "numOfCows": 5,
+            "cowDeaths": 1,
             "lifetimeCowsBought": 5,
             "lifetimeCowsSold": 0
         },
@@ -165,6 +171,7 @@ const userCommonsFixtures = {
             "totalWealth" : 100000,
             "cowHealth": 2.0,
             "numOfCows": 1000,
+            "cowDeaths": 1,
             "lifetimeCowsBought": 1500,
             "lifetimeCowsSold": 500
         },
@@ -188,6 +195,7 @@ const userCommonsFixtures = {
             "totalWealth" : 50,
             "cowHealth": 84.0,
             "numOfCows": 100,
+            "cowDeaths": 1,
             "lifetimeCowsBought": 100,
             "lifetimeCowsSold": 0
         },
@@ -211,6 +219,7 @@ const userCommonsFixtures = {
             "totalWealth" : 800,
             "cowHealth": 72.0,
             "numOfCows": 60,
+            "cowDeaths": 1,
             "lifetimeCowsBought": 60,
             "lifetimeCowsSold": 0
         }
@@ -237,6 +246,7 @@ const userCommonsFixtures = {
             "totalWealth" : 1000,
             "cowHealth": 93.0,
             "numOfCows": 8,
+            "cowDeaths": 1,
             "lifetimeCowsBought": 12,
             "lifetimeCowsSold": 4
         },
@@ -260,6 +270,7 @@ const userCommonsFixtures = {
             "totalWealth" : 1000,
             "cowHealth": 98.0,
             "numOfCows": 5,
+            "cowDeaths": 1,
             "lifetimeCowsBought": 5,
             "lifetimeCowsSold": 0
         },
@@ -283,6 +294,7 @@ const userCommonsFixtures = {
             "totalWealth" : 100000,
             "cowHealth": 2.0,
             "numOfCows": 1000,
+            "cowDeaths": 1,
             "lifetimeCowsBought": 1500,
             "lifetimeCowsSold": 500
         },
@@ -306,6 +318,7 @@ const userCommonsFixtures = {
             "totalWealth" : 50,
             "cowHealth": 84.0,
             "numOfCows": 100,
+            "cowDeaths": 2,
             "lifetimeCowsBought": 100,
             "lifetimeCowsSold": 0
         },
@@ -329,6 +342,7 @@ const userCommonsFixtures = {
             "totalWealth" : 800,
             "cowHealth": 72.0,
             "numOfCows": 60,
+            "cowDeaths": 1,
             "lifetimeCowsBought": 60,
             "lifetimeCowsSold": 0
         },
@@ -352,6 +366,7 @@ const userCommonsFixtures = {
             "totalWealth" : 1000,
             "cowHealth": 93.0,
             "numOfCows": 8,
+            "cowDeaths": 1,
             "lifetimeCowsBought": 8,
             "lifetimeCowsSold": 0
         },
@@ -375,6 +390,7 @@ const userCommonsFixtures = {
             "totalWealth" : 1000,
             "cowHealth": 98.0,
             "numOfCows": 5,
+            "cowDeaths": 1,
             "lifetimeCowsBought": 8,
             "lifetimeCowsSold": 3
         },
@@ -398,6 +414,7 @@ const userCommonsFixtures = {
             "totalWealth" : 100000,
             "cowHealth": 2.0,
             "numOfCows": 1000,
+            "cowDeaths": 14,
             "lifetimeCowsBought": 1000,
             "lifetimeCowsSold": 0
         },
@@ -421,6 +438,7 @@ const userCommonsFixtures = {
             "totalWealth" : 50,
             "cowHealth": 84.0,
             "numOfCows": 100,
+            "cowDeaths": 12,
             "lifetimeCowsBought": 100,
             "lifetimeCowsSold": 0
         },
@@ -444,6 +462,7 @@ const userCommonsFixtures = {
             "totalWealth" : 800,
             "cowHealth": 72.0,
             "numOfCows": 60,
+            "cowDeaths": 2,
             "lifetimeCowsBought": 60,
             "lifetimeCowsSold": 0
         }
