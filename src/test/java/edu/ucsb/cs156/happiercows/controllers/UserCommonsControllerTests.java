@@ -66,6 +66,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
         .totalWealth(1)
         .numOfCows(1)
         .cowHealth(100)
+        .lifetimeCowsBought(1)
+        .lifetimeCowsSold(0)
         .build();
     return userCommons;
   }
@@ -156,6 +158,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       Commons testCommons = Commons
@@ -175,6 +179,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       UserCommons correctuserCommons = UserCommons
@@ -185,6 +191,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300-testCommons.getCowPrice()*2)
       .numOfCows(3)
       .cowHealth(100)
+      .lifetimeCowsBought(3)
+      .lifetimeCowsSold(0)
       .build();
   
       String requestBody = mapper.writeValueAsString(userCommonsToSend);
@@ -222,6 +230,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       Commons testCommons = Commons
@@ -241,6 +251,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       UserCommons correctuserCommons = UserCommons
@@ -251,6 +263,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300-testCommons.getCowPrice())
       .numOfCows(2)
       .cowHealth(100)
+      .lifetimeCowsBought(2)
+      .lifetimeCowsSold(0)
       .build();
   
       String requestBody = mapper.writeValueAsString(userCommonsToSend);
@@ -289,6 +303,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       Commons testCommons = Commons
@@ -308,6 +324,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       UserCommons correctuserCommons = UserCommons
@@ -318,6 +336,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(0)
       .numOfCows(2)
       .cowHealth(100)
+      .lifetimeCowsBought(2)
+      .lifetimeCowsSold(0)
       .build();
   
       String requestBody = mapper.writeValueAsString(userCommonsToSend);
@@ -356,6 +376,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       Commons testCommons = Commons
@@ -375,6 +397,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       UserCommons correctuserCommons = UserCommons
@@ -385,6 +409,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300+testCommons.getCowPrice())
       .numOfCows(0)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(1)
       .build();
   
       String requestBody = mapper.writeValueAsString(userCommonsToSend);
@@ -422,6 +448,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       Commons testCommons = Commons
@@ -441,6 +469,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       UserCommons correctuserCommons = UserCommons
@@ -451,6 +481,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300-testCommons.getCowPrice())
       .numOfCows(2)
       .cowHealth(100)
+      .lifetimeCowsBought(2)
+      .lifetimeCowsSold(0)
       .build();
   
       String requestBody = mapper.writeValueAsString(userCommonsToSend);
@@ -491,6 +523,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       Commons testCommons = Commons
@@ -511,6 +545,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       UserCommons correctuserCommons = UserCommons
@@ -521,6 +557,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300+testCommons.getCowPrice())
       .numOfCows(2)
       .cowHealth(100)
+      .lifetimeCowsBought(2)
+      .lifetimeCowsSold(0)
       .build();
   
       String requestBody = mapper.writeValueAsString(userCommonsToSend);
@@ -561,6 +599,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       Commons testCommons = Commons
@@ -580,6 +620,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       UserCommons correctuserCommons = UserCommons
@@ -590,6 +632,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300+testCommons.getCowPrice())
       .numOfCows(2)
       .cowHealth(100)
+      .lifetimeCowsBought(2)
+      .lifetimeCowsSold(0)
       .build();
   
       String requestBody = mapper.writeValueAsString(userCommonsToSend);
@@ -628,6 +672,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       Commons testCommons = Commons
@@ -647,6 +693,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       UserCommons correctuserCommons = UserCommons
@@ -657,6 +705,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300+testCommons.getCowPrice())
       .numOfCows(2)
       .cowHealth(100)
+      .lifetimeCowsBought(2)
+      .lifetimeCowsSold(0)
       .build();
   
       String requestBody = mapper.writeValueAsString(userCommonsToSend);
@@ -696,6 +746,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       Commons testCommons = Commons
@@ -715,6 +767,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       UserCommons correctuserCommons = UserCommons
@@ -725,6 +779,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300+testCommons.getCowPrice())
       .numOfCows(2)
       .cowHealth(100)
+      .lifetimeCowsBought(2)
+      .lifetimeCowsSold(0)
       .build();
   
       String requestBody = mapper.writeValueAsString(userCommonsToSend);
@@ -758,6 +814,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(0)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       Commons testCommons = Commons
@@ -777,6 +835,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(00)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       UserCommons correctuserCommons = UserCommons
@@ -787,6 +847,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(0)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       String requestBody = mapper.writeValueAsString(userCommonsToSend);
@@ -827,6 +889,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(20)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       Commons testCommons = Commons
@@ -846,6 +910,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(20)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       UserCommons correctuserCommons = UserCommons
@@ -856,6 +922,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(20)
       .numOfCows(1)
       .cowHealth(100)
+      .lifetimeCowsBought(1)
+      .lifetimeCowsSold(0)
       .build();
   
       String requestBody = mapper.writeValueAsString(userCommonsToSend);
@@ -895,6 +963,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300)
       .numOfCows(0)
       .cowHealth(100)
+      .lifetimeCowsBought(0)
+      .lifetimeCowsSold(0)
       .build();
   
       Commons testCommons = Commons
@@ -914,6 +984,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300)
       .numOfCows(0)
       .cowHealth(100)
+      .lifetimeCowsBought(0)
+      .lifetimeCowsSold(0)
       .build();
   
       UserCommons correctuserCommons = UserCommons
@@ -924,6 +996,8 @@ public class UserCommonsControllerTests extends ControllerTestCase {
       .totalWealth(300)
       .numOfCows(0)
       .cowHealth(100)
+      .lifetimeCowsBought(0)
+      .lifetimeCowsSold(0)
       .build();
   
       String requestBody = mapper.writeValueAsString(userCommonsToSend);
