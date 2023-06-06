@@ -25,6 +25,8 @@ const ManageCows = ({ userCommons, commons, onBuy, onSell }) => {
       <Card.Body>
         <Card.Title>Market Cow Price: ${commons?.cowPrice}</Card.Title>
         <Card.Title>Number of Cows: {userCommons.numOfCows}</Card.Title>
+        <Card.Title>Lifetime Cows Bought: {userCommons.lifetimeCowsBought}</Card.Title>
+        <Card.Title>Lifetime Cows Sold: {userCommons.lifetimeCowsSold}</Card.Title>
         <Row>
           <Col>
             <Card.Text>
