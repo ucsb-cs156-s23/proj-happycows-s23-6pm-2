@@ -33,5 +33,5 @@ public class CowHerd {
     private int numCows;
 
     @Builder.Default
-    private int health = 100;
+    private double health = 100.0;
 }
