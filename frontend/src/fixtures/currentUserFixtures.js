@@ -12,6 +12,7 @@ const apiCurrentUserFixtures = {
             "locale": "en",
             "hostedDomain": "ucsb.edu",
             "admin": true,
+            "lastOnline": "2023-06-04T18:45:16.014490Z",
             "commons": [
                 {
                     "id": 1,
@@ -68,6 +69,7 @@ const apiCurrentUserFixtures = {
             "locale": "en",
             "hostedDomain": null,
             "admin": false,
+            "lastOnline": "2023-06-04T18:45:16.014490Z",
             "commons": [
                 {
                     "id": 1,
@@ -115,7 +117,8 @@ const apiCurrentUserFixtures = {
             "emailVerified": true,
             "locale": "en",
             "hostedDomain": null,
-            "admin": false
+            "admin": false,
+            "lastOnline": "2023-06-04T18:45:16.014490Z",
         }
     }
 };

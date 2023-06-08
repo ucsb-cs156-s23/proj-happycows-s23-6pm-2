@@ -6,4 +6,40 @@ const timestampToDate = (timestamp) => {
     return (date.getFullYear() + "-" + (padWithZero(date.getMonth()+1)) + "-" + padWithZero(date.getDate()));
 }
 
+const minutesInSeconds = 60;
+const hourInSeconds = 60 * minutesInSeconds;
+const dayInSeconds = 24 * hourInSeconds;
+const weekInSeconds = 7 * dayInSeconds;
+
+export function formatTime(timeString) {
+    if (!timeString) {
+        return "";
+    }
+
+    const now = new Date();
+    const dateFromEpoch = new Date(timeString);
+    const secondsPast = Math.floor((now - dateFromEpoch) / 1000);
+
+    if (secondsPast < minutesInSeconds * 2) {
+        return 'Online now';
+    }
+
+    if (secondsPast < hourInSeconds) {
+        const minutes = Math.floor(secondsPast / 60);
+        return `${minutes} minutes ago`;
+    }
+
+    if (secondsPast < dayInSeconds) {
+        const hours = Math.floor(secondsPast / 3600);
+        return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+    }
+    
+    if (secondsPast < weekInSeconds) {
+        const days = Math.floor(secondsPast / 86400);
+        return `${days} day${days > 1 ? 's' : ''} ago`;
+    }
+
+    return dateFromEpoch.toLocaleDateString();
+}
+
 export {timestampToDate, padWithZero};

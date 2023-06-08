@@ -18,6 +18,7 @@ import javax.persistence.JoinColumn;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import java.time.Instant;
 import java.util.List;
 
 @Data
@@ -39,6 +40,9 @@ public class User {
   private String locale;
   private String hostedDomain;
   private boolean admin;
+
+  @Builder.Default
+  private Instant lastOnline = Instant.now();
 
   @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
   @JoinTable(name = "user_commons", 
